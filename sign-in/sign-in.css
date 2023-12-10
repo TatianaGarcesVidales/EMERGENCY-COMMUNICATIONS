@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"],
+.form-signin input[type="password"],
+.form-signin input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da; /* Agrega un borde similar al de Bootstrap */
+  border-radius: 4px; /* Agrega bordes redondeados */
+}
+
+.form-signin h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
