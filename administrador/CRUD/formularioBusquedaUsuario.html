@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Buscar Usuarios</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../bootstrap/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/login.css" />
+    <style>
+      /*Tanto el header como el footer presentan un estilo parecido para hacerlos resaltar*/
+      header {
+        margin: 0 auto;
+        background: linear-gradient(#19191a 60%, #373739);
+        color: #f9d6d6;
+      }
+
+      /*El cuerpo del documento va a tener una configuración basica donde el fondo
+se realiza mediante la funcion linear-gradient y se acomoda de tal manera que
+se acomode totalmente al estilo de la pagina.*/
+      body {
+          background-image: url('/imagenes/lupa.jpg');
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        width: 100%;
+        margin: 0;
+        font-size: 18px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f9d6d6;
+      }
+
+      h1,
+      p {
+        text-align: center;
+      }
+
+      /*ésta configuración es parecida al ejercicio anterior (building-a-registration-form)
+con la diferencia de que este presenta un espaciado a la derecha e izquierda*/
+      form {
+        width: 60vw;
+        max-width: 500px;
+        min-width: 300px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 10px;
+        background-color: #373739;
+      }
+
+      fieldset {
+        border: none;
+        padding: 1rem 0;
+      }
+
+      input,
+      textarea,
+      select {
+        margin: 10px 0 0 0;
+        width: 100%;
+        min-height: 2em;
+        font-size: 16px;
+        border-radius: 8px;
+        background-color: #f9d6d6;
+        color: #1f1d36;
+      }
+
+      input,
+      textarea {
+        border: none;
+      }
+
+      input {
+        font-size: 16px;
+        border-radius: 7px;
+      }
+
+      input[type="submit"] {
+        border-radius: 2px;
+        background-color: #9ae5f3;
+        box-shadow: 0 0 5px 5px #9ae5f3;
+        margin-bottom: 20px;
+      }
+      /*En el boton submit este estilo hover permite que al pasar el ratón encima del mismo
+cambie de color para así reflejar que es cliqueable*/
+      input[type="submit"]:hover {
+        border-radius: 2px;
+        background-color: #020202;
+        color: #9ae5f3;
+        box-shadow: 0 0 5px 5px #020202;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      .inline {
+        width: unset;
+        margin: 0 0.5rem 0 0;
+        vertical-align: middle;
+      }
+      .space {
+        margin-bottom: 70px;
+      }
+    </style>
+    <link
+      href="http://fonts.googleapis.com/css?family=Raleway:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="../bootstrap/js/bootstrap.min.js"
+    ></script>
+
+    <!-- Jquery Validate Script -->
+    <script
+      type="text/javascript"
+      src="../js/jquery.validate.js"
+    ></script>
+  </head>
+  <body>
+    <div class="space">.</div>
+    <div class="navbar-nav navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index.html">
+            <img src="images/logo30.png" alt="" /> Home
+          </a>
+        </div>
+      </div>
+    </div>
+    <h2 style="text-align: center; color: #000000; background-color: #FFFFFF; padding: 10px;">Buscar Usuarios</h2>
+
+    <form
+      action="buscar_usuarios.php"
+      method="post"
+      id="searchUsersForm"
+    >
+      <label for="searchType">Buscar por:</label>
+      <select name="searchType" id="searchType" required>
+        <option value="username">Nombre de Usuario</option>
+        <option value="email">Correo Electrónico</option>
+      </select>
+      <br />
+      <label for="searchTerm">Término de Búsqueda:</label>
+      <input type="text" name="searchTerm" required />
+      <br />
+      <input type="submit" value="Buscar Usuarios" />
+    </form>
+    <div>
+      <!-- Botón de retroceso -->
+<button style="display: block; margin: 20px auto 0;" class="btn btn-secondary w-100 py-2 my-3 btn-custom" onclick="irAOtraInterfaz()">Atrás</button>
+
+<style>
+    .btn-custom {
+        background-color: #FFF;  /* Reemplaza 'yourColor' con el color que desees */
+        color: #000;  /* Color del texto del botón */
+        border-color: #fff;  /* Color del borde, opcional */
+    }
+</style>
+
+<script>
+    function irAOtraInterfaz() {
+        // Puedes redirigir a otra interfaz cambiando la ubicación del navegador
+        window.location.href = '../index.html';
+    }
+</script>
+      
+    </div>
+  </body>
+</html>

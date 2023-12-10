@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Dispositivo</title>
+    <style>
+        /* Estilo para el body */
+        body {
+         background-image: url('/imagenes/delete.jpeg');
+        background-size:cover;
+        background-position: center center; /* Centra la imagen en el fondo */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        margin: 0;
+        font-size: 18px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f9d6d6;
+      }
+
+
+        /* Estilo para el formulario */
+        form {
+            width: 60vw;
+            max-width: 500px;
+            min-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #373739;
+            text-align: center;
+        }
+
+        /* Estilo para los campos del formulario */
+        label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        input, select {
+            margin: 10px 0 0 0;
+            width: 100%;
+            min-height: 2em;
+            font-size: 16px;
+            border-radius: 8px;
+            background-color: #f9d6d6;
+            color: #1F1D36;
+        }
+
+        input[type="submit"] {
+            border-radius: 2px;
+            background-color: #9ae5f3;
+            box-shadow: 0 0 5px 5px#9ae5f3;
+            margin-top: 20px;
+        }
+
+        /* Estilo para el botón de submit al pasar el ratón */
+        input[type="submit"]:hover {
+            border-radius: 2px;
+            background-color: #020202;
+            color: #9ae5f3;
+            box-shadow: 0 0 5px 5px#020202;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; color: #9ae5f3;">Eliminar Dispositivo</h2>
+
+    <form action="eliminar_dispositivo.php" method="post" id="deleteDeviceForm">
+        <label for="deviceCode">Código del Dispositivo:</label>
+        <input type="text" name="deviceCode" required>
+        <br />
+        <input type="submit" value="Eliminar Dispositivo">
+    </form>
+</body>
+</html>

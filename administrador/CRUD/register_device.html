@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Device register</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../bootstrap/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/login.css" />
+    <style>
+    /*Tanto el header como el footer presentan un estilo parecido para hacerlos resaltar*/
+header {
+  margin:0 auto;
+  background: linear-gradient(#19191a 60%, #373739);
+  color: #f9d6d6;
+}
+
+        /*El cuerpo del documento va a tener una configuración basica donde el fondo
+se realiza mediante la funcion linear-gradient y se acomoda de tal manera que
+se acomode totalmente al estilo de la pagina.*/
+ body {
+         background-image: url('/imagenes/disp.png');
+        background-size:cover;
+        background-position: center center; /* Centra la imagen en el fondo */
+        background-attachment: fixed;
+        width: 100%;
+        margin: 0;
+        font-size: 18px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f9d6d6;
+      }
+
+h1,p {
+  text-align: center;
+}
+
+/*ésta configuración es parecida al ejercicio anterior (building-a-registration-form)
+con la diferencia de que este presenta un espaciado a la derecha e izquierda*/
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  background-color: #373739;
+}
+
+fieldset {
+  border: none;
+  padding: 1rem 0;
+}
+
+input, textarea, select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 2em;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #f9d6d6;
+  color: #1F1D36;
+}
+
+input,textarea {
+  border: none;
+}
+
+input {
+  font-size: 16px;
+  border-radius: 7px;
+}
+
+input[type="submit"] {
+  border-radius: 2px;
+  background-color: #9ae5f3;
+  box-shadow: 0 0 5px 5px#9ae5f3;
+  margin-bottom: 20px;
+}
+/*En el boton submit este estilo hover permite que al pasar el ratón encima del mismo
+cambie de color para así reflejar que es cliqueable*/
+input[type="submit"]:hover {
+  border-radius: 2px;
+  background-color: #020202;
+  color: #9ae5f3;
+  box-shadow: 0 0 5px 5px#020202;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5rem 0 0;
+  vertical-align: middle;
+}
+.space{
+    margin-bottom:70px;
+}
+    </style>
+    <link
+    href="http://fonts.googleapis.com/css?family=Raleway:400,300"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="http://fonts.googleapis.com/css?family=Open+Sans"
+    rel="stylesheet"
+    type="text/css"
+  />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="../bootstrap/js/bootstrap.min.js"
+    ></script>
+    
+    <!-- Jquery Validate Script -->
+    <script type="text/javascript" src="../js/jquery.validate.js"></script>
+
+  </head>
+  <body>
+      
+      <div class="space">.</div>
+    <div class="navbar-nav navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" 
+              ><img src="images/logo30.png" alt="" /> Registrar Dispositivo</a
+            >
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+              </li>
+              <li class="active">
+                <a href="/administrador/CRUD/register_device.html"
+                  ><i class="icon-th icon-white"></i> Registrar dispositivo</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+ 
+      </div>
+    <form id="device-form" method="post" action="register_device.php">
+               <h2 style="text-align: center; color: #9ae5f3;">Registrar Dispositivo</h2>
+      <fieldset>
+        <label for="name" id="name-label"
+          >Nombre
+          <input type="text" name="name" id="name" placeholder="Ingresa el nombre de la persona que llevará la manilla" required />
+        </label>
+        <label for="email" id="email-label"
+          >Email
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ingresa el Email del Usuario"
+            required
+          />
+        </label>
+        <label for="age" id="number-label">
+          Edad
+          <!--
+            TODO: La propiedad onkeypress me permite saber si se ha presionado una tecla
+            y qué tecla se ha presionado con el event.charCode, este retorna el codigo
+            ASCII de la tecla, por lo cual están habilitadas solo las teclas de los numeros.
+          -->
+          <input
+            type="number"
+            id="number"
+            name="number"
+            placeholder="Inserta la edad de la persona que llevará la manilla"
+            min="10"
+            max="99"
+            onkeypress="return (event.charCode >=48 && event.charCode <= 57)"
+          />
+        </label>
+        <label for="id_number" id="id_number">
+            Identificación
+            <!--
+              TODO: La propiedad onkeypress me permite saber si se ha presionado una tecla
+              y qué tecla se ha presionado con el event.charCode, este retorna el codigo
+              ASCII de la tecla, por lo cual están habilitadas solo las teclas de los numeros.
+            -->
+            <input
+              type="number"
+              id="id_number"
+              name="id_number"
+              placeholder="Ingresa número de identificación de la persona que llevará la manilla"
+              onkeypress="return (event.charCode >=48 && event.charCode <= 57)"
+            />
+          </label>
+        <label for="blood_type"
+          >Tipo de sangre
+          <select name="blood" id="blood_type">
+            <option value="">Seleciona su tipo de sangre</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+        </label>
+     
+      <!--<label for="device_number" id="device_number">
+        Codigo de dispositivo
+        
+          TODO: La propiedad onkeypress me permite saber si se ha presionado una tecla
+          y qué tecla se ha presionado con el event.charCode, este retorna el codigo
+          ASCII de la tecla, por lo cual están habilitadas solo las teclas de los numeros.
+        
+        <input
+          type="number"
+          id="device_number"
+          name="device_number"
+          placeholder="Ingresa el codigo del dispositivo"
+          onkeypress="return (event.charCode >=48 && event.charCode <= 57)"
+        />
+      </label>-->
+  </fieldset>
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+     <div>
+      <!-- Botón de retroceso -->
+<button style="display: block; margin: 20px auto 0;" class="btn btn-secondary w-100 py-2 my-3 btn-custom" onclick="irAOtraInterfaz()">Atrás</button>
+
+<style>
+    .btn-custom {
+        background-color: #FFF;  /* Reemplaza 'yourColor' con el color que desees */
+        color: #000;  /* Color del texto del botón */
+        border-color: #fff;  /* Color del borde, opcional */
+    }
+</style>
+
+<script>
+    function irAOtraInterfaz() {
+        // Puedes redirigir a otra interfaz cambiando la ubicación del navegador
+        window.location.href = '../index.html';
+    }
+</script>
+      
+    </div>
+  </body>
+</html>

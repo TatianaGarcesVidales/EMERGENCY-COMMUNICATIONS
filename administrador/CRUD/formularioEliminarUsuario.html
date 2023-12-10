@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Usuario</title>
+    <style>
+        /* Estilo para el body */
+        body {
+         background-image: url('/imagenes/eliminado.png');
+        background-size:cover;
+        background-position: center center; /* Centra la imagen en el fondo */
+        background-attachment: fixed;
+        width: 100%;
+        margin: 0;
+        font-size: 18px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f9d6d6;
+      }
+
+        /* Estilo para el formulario */
+        form {
+            width: 60vw;
+            max-width: 500px;
+            min-width: 300px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 10px;
+            background-color: #373739;
+            margin-top: 20px;
+        }
+
+        fieldset {
+            border: none;
+            padding: 1rem 0;
+        }
+
+        input, select {
+            margin: 10px 0 0 0;
+            width: 100%;
+            min-height: 2em;
+            font-size: 16px;
+            border-radius: 8px;
+            background-color: #f9d6d6;
+            color: #1F1D36;
+        }
+
+        input {
+            font-size: 16px;
+            border-radius: 7px;
+        }
+
+        input[type="submit"] {
+            border-radius: 2px;
+            background-color: #9ae5f3;
+            box-shadow: 0 0 5px 5px#9ae5f3;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"]:hover {
+            border-radius: 2px;
+            background-color: #020202;
+            color: #9ae5f3;
+            box-shadow: 0 0 5px 5px#020202;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        /* Estilo para el escondido */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; color: #9ae5f3;">Eliminar Usuario</h2>
+    <form action="eliminar_usuario.php" method="post" id="deleteUserForm">
+        <fieldset>
+            <label for="deleteType">Selecciona el tipo de eliminación:</label>
+            <select name="deleteType" id="deleteType" required>
+                <option value="id">Por ID</option>
+                <option value="username">Por Nombre de Usuario</option>
+                <option value="email">Por Correo Electrónico</option>
+            </select>
+            <br />
+
+            <!-- Campo dinámico según la opción seleccionada -->
+            <div id="deleteField"></div>
+        </fieldset>
+        <input type="submit" value="Eliminar Usuario">
+    </form>
+
+    <script>
+        // JavaScript para cambiar el campo según la opción seleccionada
+        document.getElementById('deleteType').addEventListener('change', function () {
+            var selectedType = this.value;
+            var deleteField = document.getElementById('deleteField');
+
+            // Limpiar el campo actual
+            deleteField.innerHTML = '';
+
+            // Crear el nuevo campo según la opción seleccionada
+            switch (selectedType) {
+                case 'id':
+                    deleteField.innerHTML = '<label for="userId">ID del Usuario a Eliminar:</label><input type="number" name="userId" id="userId" placeholder="Ingresa el ID del usuario" required>';
+                    break;
+                case 'username':
+                    deleteField.innerHTML = '<label for="username">Nombre de Usuario a Eliminar:</label><input type="text" name="username" id="username" placeholder="Ingresa el nombre de usuario" required>';
+                    break;
+                case 'email':
+                    deleteField.innerHTML = '<label for="email">Correo Electrónico a Eliminar:</label><input type="email" name="email" id="email" placeholder="Ingresa el correo electrónico" required>';
+                    break;
+            }
+        });
+    </script>
+    <div>
+      <!-- Botón de retroceso -->
+<button style="display: block; margin: 20px auto 0;" class="btn btn-secondary w-100 py-2 my-3 btn-custom" onclick="irAOtraInterfaz()">Atrás</button>
+
+<style>
+    .btn-custom {
+        background-color: #FFF;  /* Reemplaza 'yourColor' con el color que desees */
+        color: #000;  /* Color del texto del botón */
+        border-color: #fff;  /* Color del borde, opcional */
+    }
+</style>
+
+<script>
+    function irAOtraInterfaz() {
+        // Puedes redirigir a otra interfaz cambiando la ubicación del navegador
+        window.location.href = '../index.html';
+    }
+</script>
+      
+    </div>
+</body>
+</html>

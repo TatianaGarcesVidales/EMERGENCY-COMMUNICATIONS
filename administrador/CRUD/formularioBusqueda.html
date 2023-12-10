@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar Manillas</title>
+    <style>
+      body {
+         background-image: url('/imagenes/rel.png');
+        background-size:cover;
+        background-position: center center; /* Centra la imagen en el fondo */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        margin: 0;
+        font-size: 18px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f9d6d6;
+      }
+
+      h2 {
+        text-align: center;
+        color: #9ae5f3;
+      }
+
+      form {
+        width: 60vw;
+        max-width: 500px;
+        min-width: 300px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 10px;
+        background-color: #373739;
+        margin-top: 50px;
+      }
+
+      label {
+        display: block;
+        margin: 0.5rem 0;
+        color: #9ae5f3;
+      }
+
+      select,
+      input[type="text"] {
+        margin: 10px 0 0 0;
+        width: 100%;
+        min-height: 2em;
+        font-size: 16px;
+        border-radius: 8px;
+        background-color: #f9d6d6;
+        color: #1f1d36;
+      }
+
+      input[type="submit"] {
+        border-radius: 2px;
+        background-color: #9ae5f3;
+        box-shadow: 0 0 5px 5px #9ae5f3;
+        margin-top: 20px;
+        color: #19191a;
+      }
+
+      input[type="submit"]:hover {
+        border-radius: 2px;
+        background-color: #020202;
+        color: #9ae5f3;
+        box-shadow: 0 0 5px 5px #020202;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+        <h2 style="text-align: center; color: #000000; background-color: #FFFFFF; padding: 10px;">Buscar Dispositivos</h2>
+
+  <form action="buscar_manillas.php" method="post" id="searchForm" style="text-align: center;">
+  <label for="searchType" style="display: inline-block;">Buscar por:</label>
+  <select name="searchType" id="searchType" required style="display: inline-block;">
+    <option value="email">Correo Electrónico</option>
+    <option value="deviceCode">Código de Dispositivo</option>
+  </select>
+  <br />
+  <label for="searchTerm" style="display: inline-block;">Término de Búsqueda:</label>
+  <input type="text" name="searchTerm" required style="display: inline-block;" />
+  <br />
+  <input type="submit" value="Buscar Manillas" style="margin-top: 20px;" />
+  <div>
+      <!-- Botón de retroceso -->
+<button style="display: block; margin: 20px auto 0;" class="btn btn-secondary w-100 py-2 my-3 btn-custom" onclick="irAOtraInterfaz()">Atrás</button>
+
+<style>
+    .btn-custom {
+        background-color: #FFF;  /* Reemplaza 'yourColor' con el color que desees */
+        color: #000;  /* Color del texto del botón */
+        border-color: #fff;  /* Color del borde, opcional */
+    }
+</style>
+
+<script>
+    function irAOtraInterfaz() {
+        // Puedes redirigir a otra interfaz cambiando la ubicación del navegador
+        window.location.href = '../index.html';
+    }
+</script>
+      
+    </div>
+</form>
+
+  </body>
+</html>
